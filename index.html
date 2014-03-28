@@ -149,7 +149,7 @@
   <script type="text/javascript" src="resultatsG1.json"></script>
   <script type="text/javascript">
 
-    var osmAttrib='Par <a href="http://www.makina-corpus.com">Makina Corpus</a> | <a href="http://caen.fr/ResultatsAffichage/MenuScrutin.aspx?CodScrutin=80&TypDem=R&Annee=2014">Données électorales</a>';
+    var osmAttrib='Par <a href="http://www.makina-corpus.com" target="_blank">Makina Corpus</a> | <a href="http://caen.fr/ResultatsAffichage/MenuScrutin.aspx?CodScrutin=80&TypDem=R&Annee=2014" target="_blank">Données électorales</a>';
     // http://www.caen.fr/infos_mairie/elections-municipales/bureaux-vote.asp
     // http://www.caen.fr/infos_mairie/elections-municipales/bureaux.js
     // http://www.caen.fr/infos_mairie/elections-municipales/zonages.js
@@ -159,7 +159,7 @@
     map.attributionControl.setPrefix(osmAttrib);
     
     map.setMaxBounds(new L.LatLngBounds(new L.LatLng(49.1174, -0.5994),new L.LatLng(49.2596, -0.1308)));
-    L.tileLayer("http://{s}.livembtiles.makina-corpus.net/makina/osmlight-france/{z}/{x}/{y}.png",{attribution:'&copy; Contributeurs <a href="http://osm.org/copyright">OpenStreetMap</a>'}).addTo(map)
+    L.tileLayer("http://{s}.livembtiles.makina-corpus.net/makina/osmlight-france/{z}/{x}/{y}.png",{attribution:'&copy; Contributeurs <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a>'}).addTo(map)
 
         if (L.Browser.touch) {
       L.control.touchHover().addTo(map);
