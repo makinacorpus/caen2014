@@ -183,6 +183,11 @@
     var colors = {    'l_orphelin': '#569764'    ,'de_la_provote': '#E98E35'    ,'duron': '#F48FAB'    ,'bruneau': '#5D7CB4'    ,'casevitz': '#E93535'    ,'adam': '#F48FAB'    ,'chapron': '#415674'    , 'nuls': '#CCCCCC'    };
     var fullNames = {    'l_orphelin': 'Rudy L\'Orphelin'    ,'de_la_provote': 'Sonia de La Provôté'    ,'duron': 'Philippe Duron'    ,'bruneau': 'Joël Bruneau'    ,'casevitz': 'Pierre Casevitz'    ,'adam': 'Etienne Adam'    ,'chapron': 'Philippe Chapron'    , 'nuls': 'Nuls'    };
     var partis = {    'l_orphelin': 'CAEN ECOLOGISTE ET CITOYENNE'    ,'de_la_provote': 'CAEN VOUS APPARTIENT'    ,'duron': 'Le Caen de l\'avenir'    ,'bruneau': 'Avec Joël Bruneau, réussir Caen, vraiment !'    ,'casevitz': 'Lutte ouvrière faire entendre le camp des travailleurs'    ,'adam': 'L\'alternative à Gauche'    ,'chapron': 'Caen fait front'    , 'nuls': ''    };    
+    var bureaux_nom = {
+    '1':'Hôtel de ville','2':'Centre-ville','3':'Saint-Ouen','4':'Venoix','5':'Hastings','6':'Bosnières','7':'Authie-Sud','8':'Maladrerie'
+    ,'9':'Authie-Nord','10':'Saint-Paul','11':'Saint-Gilles','12':'Calmette','13':'Pierre Heuzé','14':'Calvaire Saint-Pierre','15':'Folie Couvrechef (hameau)'
+    ,'16':'Saint-Jean','17':'Demi-Lune','18':'Boulevard Leroy','19':'Grâce de Dieu','20':'Branville','21':'Guérinière','22':'Folie Couvrechef (zac)','23':'Clos Herbert'
+    };    
     
     Candidat = function () {
         this.min = null;
@@ -348,7 +353,7 @@
           resultsList += '%</li>';
         };
         resultsList += '</ul>';
-        this._div.innerHTML = '<b>' + bureau.NOM + '</b> (n°'+ bureau.sub_id.replace(/^0+/, '') + ')<br />' + resultsList;
+        this._div.innerHTML = '<b>' + bureaux_nom[bureau.id] + '</b> (n°'+ bureau.sub_id.replace(/^0+/, '') + ')<br />' + resultsList;
       } else{
         var resultsList = '<ul>';
         resultsList += scales;
