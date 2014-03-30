@@ -135,10 +135,10 @@
 <body>
   <div id="header">
     <a href="http://www.makina-corpus.com" target="_blank"><img id="logo" src="http://depot.makina-corpus.org/public/logo.gif"></a>
-    <h1 id="title">Élections municipales 2014 à Caen - Premier tour</h1>
+    <h1 id="title">Élections municipales 2014 à Caen - Deuxième tour</h1>
     <h3 id="title2">Résultats par bureau de vote - la couleur affichée est celle du candidat arrivé en tête.</h3>
-    <a href="by-candidate.html">Carte par candidat</a>
-     - <a href="index-tour-2.html">Carte du second tour</a>
+    <a href="by-candidate-tour-2.html">Carte par candidat</a>
+    <a href="index.html">Carte du premier tour</a>
   </div>
   <div id="map"></div>
   <div id="footer">
@@ -149,11 +149,11 @@
 <!--   <script type="text/javascript" src="http://d3js.org/d3.v2.js"></script> -->
   <script type="text/javascript" src="Control.TouchHover.js"></script>
   <script type="text/javascript" src="bureaux.geojson"></script>
-  <script type="text/javascript" src="bureaux_vote_decoupage2014.json"></script>
-  <script type="text/javascript" src="resultatsG1.json"></script>
+  <script type="text/javascript" src="bureaux_vote_decoupage2014_tour_2.json"></script>
+  <script type="text/javascript" src="resultatsG1_tour_2.json"></script>
   <script type="text/javascript">
 
-    var osmAttrib='Par <a href="http://www.makina-corpus.com" target="_blank">Makina Corpus</a> | <a href="http://caen.fr/ResultatsAffichage/MenuScrutin.aspx?CodScrutin=80&TypDem=R&Annee=2014" target="_blank">Données électorales</a>';
+    var osmAttrib='Par <a href="http://www.makina-corpus.com" target="_blank">Makina Corpus</a> | <a href="http://caen.fr/ResultatsAffichage/MenuScrutin.aspx?CodScrutin=81&TypDem=R&Annee=2014" target="_blank">Données électorales</a>';
     // http://www.caen.fr/infos_mairie/elections-municipales/bureaux-vote.asp
     // http://www.caen.fr/infos_mairie/elections-municipales/bureaux.js
     // http://www.caen.fr/infos_mairie/elections-municipales/zonages.js
@@ -172,33 +172,18 @@
     // get color depending on the candidate
 
     var colors = {
-    'l_orphelin': '#569764'
-    ,'de_la_provote': '#E98E35'
-    ,'duron': '#F48FAB'
+    'duron': '#F48FAB'
     ,'bruneau': '#5D7CB4'
-    ,'casevitz': '#E93535'
-    ,'adam': '#F48FAB'
-    ,'chapron': '#415674'
     , 'nuls': '#CCCCCC'
     };
     var fullNames = {
-    'l_orphelin': 'Rudy L\'Orphelin'
-    ,'de_la_provote': 'Sonia de La Provôté'
-    ,'duron': 'Philippe Duron'
+    'duron': 'Philippe Duron'
     ,'bruneau': 'Joël Bruneau'
-    ,'casevitz': 'Pierre Casevitz'
-    ,'adam': 'Etienne Adam'
-    ,'chapron': 'Philippe Chapron'
     , 'nuls': 'Nuls'
     };
     var partis = {
-    'l_orphelin': 'CAEN ECOLOGISTE ET CITOYENNE'
-    ,'de_la_provote': 'CAEN VOUS APPARTIENT'
-    ,'duron': 'Le Caen de l\'avenir'
-    ,'bruneau': 'Avec Joël Bruneau, réussir Caen, vraiment !'
-    ,'casevitz': 'Lutte ouvrière faire entendre le camp des travailleurs'
-    ,'adam': 'L\'alternative à Gauche'
-    ,'chapron': 'Caen fait front'
+    'duron': 'Le Caen de l\'avenir'
+    ,'bruneau': 'Avec Joël BRUNEAU et Sonia de LA PROVÔTÉ, Unis pour réussir Caen vraiment !'
     , 'nuls': ''
     };
     var bureaux_nom = {
