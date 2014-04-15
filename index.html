@@ -280,17 +280,20 @@
       if (bureau) {
         var resultsList = '<ul>';
         for(var key in results[bureau.sub_id]) {
+        
           var value = results[bureau.sub_id][key];
           var sub_bureau = results[bureau.sub_id][key];
-          resultsList += '<li><canvas id="myCanvas" width="';
-          resultsList += value[Object.keys(value)];
-          resultsList += '" height="20" style="border:1px solid ' + colors[Object.keys(value)] + '; background-color:';
-          resultsList += colors[Object.keys(value)];
-          resultsList += '; opacity: 0.6;"></canvas> ';
-          resultsList += fullNames[Object.keys(value)];
-          resultsList += '<span class="parti"> (' + partis[Object.keys(value)] + ')</span> : ';
-          resultsList += value[Object.keys(value)];
-          resultsList += '%</li>';
+          if(Object.keys(value) != "nuls") {
+            resultsList += '<li><canvas id="myCanvas" width="';
+            resultsList += value[Object.keys(value)];
+            resultsList += '" height="20" style="border:1px solid ' + colors[Object.keys(value)] + '; background-color:';
+            resultsList += colors[Object.keys(value)];
+            resultsList += '; opacity: 0.6;"></canvas> ';
+            resultsList += fullNames[Object.keys(value)];
+            resultsList += '<span class="parti"> (' + partis[Object.keys(value)] + ')</span> : ';
+            resultsList += value[Object.keys(value)];
+            resultsList += '%</li>';
+          }
         };
         resultsList += '<ul>';
         this._div.innerHTML = '<b>' + bureaux_nom[bureau.id] + '</b> (n°'+ bureau.sub_id.replace(/^0+/, '') + ')<br />' + resultsList;
@@ -298,15 +301,17 @@
         var resultsList = '<ul>';
         for(var key in resultsG1) {
           var value = resultsG1[key];
-          resultsList += '<li><canvas id="myCanvas" width="';
-          resultsList += value[Object.keys(value)];
-          resultsList += '" height="20" style="border:1px solid ' + colors[Object.keys(value)] + '; background-color:';
-          resultsList += colors[Object.keys(value)];
-          resultsList += '; opacity: 0.6;"></canvas> ';
-          resultsList += fullNames[Object.keys(value)];
-          resultsList += '<span class="parti"> (' + partis[Object.keys(value)] + ')</span> : ';
-          resultsList += value[Object.keys(value)];
-          resultsList += '%</li>';
+          if(Object.keys(value) != "nuls") {
+            resultsList += '<li><canvas id="myCanvas" width="';
+            resultsList += value[Object.keys(value)];
+            resultsList += '" height="20" style="border:1px solid ' + colors[Object.keys(value)] + '; background-color:';
+            resultsList += colors[Object.keys(value)];
+            resultsList += '; opacity: 0.6;"></canvas> ';
+            resultsList += fullNames[Object.keys(value)];
+            resultsList += '<span class="parti"> (' + partis[Object.keys(value)] + ')</span> : ';
+            resultsList += value[Object.keys(value)];
+            resultsList += '%</li>';
+          }
         };
         resultsList += '<ul>';
         this._div.innerHTML = '<h3>Résultats à Caen</h3>' + ' (Survolez un bureau de vote pour plus de détails)' + resultsList;
